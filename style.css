@@ -7,85 +7,143 @@
 
 /* Corpo da página */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f9; /* Cor de fundo suave */
-    color: #333; /* Texto escuro para boa legibilidade */
-    padding-top: 40px; /* Espaço superior para o cabeçalho */
+    background-color: #f0f0f0; /* Cor de fundo mais suave */
+    color: #333;
+    padding-top: 60px; /* Espaço para o cabeçalho */
+    transition: background-color 0.3s ease-in-out;
 }
 
 /* Cabeçalho */
 header {
-    background-color: #2C3E50; /* Azul escuro */
+    background: linear-gradient(135deg, #2C3E50, #34495E); /* Gradiente suave */
     color: #fff;
     text-align: center;
-    padding: 30px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave no cabeçalho */
+    padding: 40px 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    transition: background 0.3s ease-in-out;
 }
 
 header h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-family: 'Georgia', serif;
+    font-size: 3.5rem;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
 }
 
 nav ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0 20px;
+    margin: 0 25px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #ecf0f1;
     font-size: 1.2rem;
+    text-transform: uppercase;
     letter-spacing: 1px;
-    transition: color 0.3s ease;
+    position: relative;
+    transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #ff00bf; /* Cor dourada para o efeito hover */
+    color: #FFD700;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #FFD700;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 /* Conteúdo Principal */
 main {
+    margin-top: 140px; /* Evita que o conteúdo seja sobreposto pelo cabeçalho fixo */
     max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
+    margin: 0 auto;
+    padding: 50px 20px;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 section {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+section:nth-child(odd) {
+    background: linear-gradient(145deg, #ecf0f1, #ffffff);
+}
+
+section:nth-child(even) {
+    background: linear-gradient(145deg, #ffffff, #ecf0f1);
 }
 
 section h2 {
     font-size: 2.5rem;
     color: #2C3E50;
+    font-family: 'Merriweather', serif;
     margin-bottom: 15px;
-    font-family: 'Georgia', serif;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: relative;
+    padding-left: 25px;
+}
+
+section h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 5px;
+    height: 40%;
+    background-color: #FFD700;
+    transform: translateY(-50%);
 }
 
 section p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #555;
+    text-align: justify;
 }
 
-/* Adicionando imagem de fundo nas seções */
-section:nth-child(odd) {
-    background-color: #ecf0f1; /* Cor de fundo suave nas seções ímpares */
+section p a {
+    color: #2C3E50;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-section:nth-child(even) {
-    background-color: #ffffff;
+section p a:hover {
+    color: #FFD700;
 }
 
 /* Rodapé */
@@ -93,44 +151,61 @@ footer {
     background-color: #2C3E50;
     color: #fff;
     text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-    font-size: 1rem;
+    padding: 30px 20px;
+    margin-top: 50px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    position: relative;
+    box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
-    font-size: 1rem;
-    letter-spacing: 1px;
+    margin: 0;
 }
 
-/* Estilizando links dentro das seções */
-a {
-    color: #2C3E50;
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* Efeitos de Parallax para imagens */
+section:nth-child(odd) {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
 
-a:hover {
-    color: #ff00ea;
+/* Animações sutis nas seções */
+section {
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Responsividade para dispositivos móveis */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
     body {
-        padding-top: 60px;
+        padding-top: 80px;
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     nav ul li {
-        display: block;
-        margin: 10px 0;
+        margin: 0 15px;
     }
 
     nav ul li a {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    main {
+        margin-top: 100px;
     }
 
     section h2 {
@@ -142,6 +217,7 @@ a:hover {
     }
 
     footer {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        padding: 20px;
     }
 }
