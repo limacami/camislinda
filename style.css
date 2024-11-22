@@ -1,74 +1,100 @@
-/* Reset básico */
+/* Resetando margens e paddings padrão */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Definindo fonte padrão e cor de fundo */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f9;
     color: #333;
-    margin: 0;
-    padding: 0;
 }
 
+/* Estilo para o cabeçalho */
 header {
-    background-color: #222;
+    background-color: #333;
     color: #fff;
-    padding: 1rem 0;
+    padding: 20px;
     text-align: center;
 }
 
 header h1 {
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-header nav ul {
+nav ul {
     list-style: none;
-    padding: 0;
 }
 
-header nav ul li {
+nav ul li {
     display: inline;
-    margin: 0 1rem;
+    margin: 0 15px;
 }
 
-header nav ul li a {
-    color: #fff;
+nav ul li a {
     text-decoration: none;
-    font-weight: bold;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 2rem;
-}
-
-main section {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-main section h2 {
-    margin-bottom: 1rem;
-    color: #444;
-}
-
-footer {
-    text-align: center;
-    background-color: #222;
     color: #fff;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    font-size: 1.1rem;
+    transition: color 0.3s;
 }
 
+nav ul li a:hover {
+    color: #ffd700;
+}
 
+/* Estilo para as seções do conteúdo */
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
