@@ -1,107 +1,103 @@
-/* Estilos gerais */
+/* Estilos Gerais */
 body {
     font-family: 'Georgia', serif;
-    color: #4b4b4b;
-    background-color: #fdfdfd;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    color: #4b4b4b;
+    background: #fff8f5;
 }
 
 /* Cabeçalho */
 header {
-    text-align: center;
     background: linear-gradient(135deg, #f8e2e7, #ffe6f2);
-    color: #6d3c55;
+    text-align: center;
     padding: 2rem 1rem;
+    color: #6d3c55;
+    border-bottom: 3px solid #ff87a1;
+}
+
+.header-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin: 0;
+    font-size: 3rem;
+    margin: 0.5rem 0;
 }
 
-header p {
+.tagline {
     font-size: 1.2rem;
     font-style: italic;
+    margin-top: 0.5rem;
 }
 
-/* Introdução */
-.intro {
+/* Seções */
+main {
     padding: 2rem;
-    text-align: center;
 }
 
-.intro h2 {
+.intro, .timeline, .quote {
+    margin-bottom: 2rem;
+}
+
+h2 {
     font-size: 2rem;
     color: #6d3c55;
+    margin-bottom: 1rem;
 }
 
-.intro p {
+p {
     font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 /* Linha do Tempo */
-.timeline {
-    background-color: #f8f8f8;
-    padding: 2rem 1rem;
-}
-
-.timeline h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #6d3c55;
-}
-
 .timeline article {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
     border-left: 4px solid #ff87a1;
-    margin: 1.5rem 0;
-    padding-left: 1rem;
+    background: #fff0f4;
+    border-radius: 5px;
 }
 
 .timeline h3 {
     font-size: 1.5rem;
-    margin: 0;
     color: #6d3c55;
+    margin: 0;
 }
 
 .timeline p {
-    font-size: 1rem;
-    margin: 0.5rem 0 0;
+    margin-top: 0.5rem;
 }
 
-/* Galeria */
-.gallery {
-    padding: 2rem 1rem;
+/* Citação */
+.quote {
     text-align: center;
-}
-
-.gallery h2 {
-    font-size: 2rem;
-    color: #6d3c55;
-}
-
-.images {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.images img {
+    background: #ffe6f2;
+    padding: 2rem;
     border-radius: 8px;
-    border: 2px solid #ff87a1;
-    max-width: 100%;
+    font-style: italic;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+blockquote {
+    font-size: 1.5rem;
+    color: #6d3c55;
 }
 
 /* Rodapé */
 footer {
     text-align: center;
-    background-color: #6d3c55;
+    padding: 1rem;
+    background: #6d3c55;
     color: #fff;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    font-size: 1rem;
 }
 
 footer p {
