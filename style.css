@@ -5,26 +5,28 @@
     box-sizing: border-box;
 }
 
-/* Definindo fonte padrão e cor de fundo */
+/* Corpo da página */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #ffffff;
-    color: #333;
+    background-color: #f4f4f9; /* Cor de fundo suave */
+    color: #333; /* Texto escuro para boa legibilidade */
+    padding-top: 40px; /* Espaço superior para o cabeçalho */
 }
 
-/* Estilo para o cabeçalho */
+/* Cabeçalho */
 header {
-    background-color: #333;
+    background-color: #2C3E50; /* Azul escuro */
     color: #fff;
-    padding: 20px;
     text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave no cabeçalho */
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #ff00c8;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
 }
 
 nav ul {
@@ -32,56 +34,92 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin: 0 20px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.1rem;
-    transition: color 0.3s;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ff00c8;
+    color: #FFD700; /* Cor dourada para o efeito hover */
 }
 
-/* Estilo para as seções do conteúdo */
+/* Conteúdo Principal */
 main {
+    max-width: 1200px;
+    margin: 50px auto;
     padding: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
     background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 section h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #333;
+    font-size: 2.5rem;
+    color: #2C3E50;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Estilo do rodapé */
+section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Adicionando imagem de fundo nas seções */
+section:nth-child(odd) {
+    background-color: #ecf0f1; /* Cor de fundo suave nas seções ímpares */
+}
+
+section:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Rodapé */
 footer {
-    background-color: #333;
+    background-color: #2C3E50;
     color: #fff;
     text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 1rem;
 }
 
 footer p {
     font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Estilizando links dentro das seções */
+a {
+    color: #2C3E50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FFD700;
 }
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+
     header h1 {
         font-size: 2rem;
     }
@@ -92,10 +130,18 @@ footer p {
     }
 
     nav ul li a {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     section h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
     }
 }
