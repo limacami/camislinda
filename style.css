@@ -105,6 +105,11 @@ section p {
     border-radius: 8px;
     object-fit: cover;
     height: 200px;
+    .minha-imagem {
+        width: 100%;   /* A imagem ocupará 100% da largura do container */
+        height: auto;  /* A altura será ajustada automaticamente para manter a proporção */
+    }
+    
 }
 
 footer {
