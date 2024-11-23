@@ -1,31 +1,31 @@
 /* Arquivo styles.css */
 body {
     font-family: 'Georgia', serif;
-    color: #333;
+    color: #4a4a4a;
     margin: 0;
     padding: 0;
-    background-color: #fef9f9;
+    background-color: #fef5f5;
+    line-height: 1.8;
 }
 
 header.hero {
-    background: linear-gradient(to right, #ffc1c1, #ffe6e6);
+    background: linear-gradient(to right, #ffcce6, #ffe6f2);
     text-align: center;
     padding: 50px 20px;
-    color: #6d3d6d;
+    color: #8b3e57;
 }
 
 header.hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 2.8em;
+    margin-bottom: 15px;
 }
 
 header.hero p {
     font-size: 1.2em;
-    margin: 0;
 }
 
 main {
-    padding: 20px;
+    padding: 20px 40px;
 }
 
 section {
@@ -33,65 +33,45 @@ section {
 }
 
 h2 {
-    font-size: 2em;
-    color: #9b4f9b;
+    font-size: 2.2em;
+    color: #b35571;
     margin-bottom: 10px;
-    border-bottom: 2px solid #ffe6e6;
+    border-bottom: 2px solid #ffe6f2;
     display: inline-block;
 }
 
-.about p, .services p {
+p {
     font-size: 1.1em;
-    line-height: 1.8;
-    margin-bottom: 15px;
 }
 
-.about img {
+.history-image, .gallery img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
+    margin-top: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.service-item {
-    background: #ffe6e6;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.service-item h3 {
-    color: #6d3d6d;
-}
-
 .gallery {
-    text-align: center;
-}
-
-.gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
+    margin-top: 15px;
 }
 
-.gallery-grid img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+blockquote {
+    font-style: italic;
+    color: #8b3e57;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background: #ffe6f2;
+    border-left: 4px solid #b35571;
 }
 
 footer {
-    background: #ffc1c1;
-    color: #6d3d6d;
+    background: #ffcce6;
+    color: #8b3e57;
     text-align: center;
-    padding: 15px 20px;
+    padding: 15px;
     font-size: 0.9em;
 }
