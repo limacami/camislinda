@@ -23,6 +23,24 @@ header {
     border-bottom: 5px solid #e0b0b9;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header-image {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-text {
+    text-align: left;
+}
+
 header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3em;
