@@ -1,41 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffccdd;
+    font-family: 'Pacifico', cursive;
+    background: linear-gradient(135deg, #ff99cc, #ff66b2, #ff33aa);
     text-align: center;
-    padding: 50px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    background: #ff99cc;
+    background: rgba(255, 182, 193, 0.9);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px #ff6699;
-    display: inline-block;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px #ff33aa;
+    text-align: center;
+    width: 350px;
+    animation: glitter 1.5s infinite alternate;
 }
 
-button {
-    background: #ff6699;
-    color: white;
+h1 {
+    color: #ff1493;
+    text-shadow: 2px 2px 10px #ff33cc;
+}
+
+p {
+    color: #660033;
+}
+
+.botoes button, .jogar {
+    background: linear-gradient(45deg, #ff66b2, #ff99cc);
     border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 25px;
     cursor: pointer;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px;
+    box-shadow: 0px 5px 10px rgba(255, 20, 147, 0.5);
+    transition: 0.3s;
 }
 
-button:hover {
-    background: #ff3366;
+.botoes button:hover, .jogar:hover {
+    background: linear-gradient(45deg, #ff33aa, #ff66b2);
+    box-shadow: 0px 5px 15px rgba(255, 20, 147, 0.8);
 }
 
 input {
-    padding: 5px;
-    border: 2px solid #ff6699;
-    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid #ff1493;
+    border-radius: 10px;
     text-align: center;
+    width: 80%;
+    font-size: 16px;
 }
 
 #resultado {
-    font-size: 1.2em;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff1493;
     margin-top: 20px;
-    color: #990033;
+    text-shadow: 1px 1px 5px pink;
+}
+
+@keyframes glitter {
+    0% { box-shadow: 0px 0px 20px #ff33aa; }
+    100% { box-shadow: 0px 0px 30px #ff99cc; }
 }
