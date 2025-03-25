@@ -1,4 +1,4 @@
-body {
+.body {
     background-color: black;
     color: white;
     text-align: center;
@@ -44,4 +44,4 @@ button {
     font-weight: bold;
 }
 
-.brilhos {
+
