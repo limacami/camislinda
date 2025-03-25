@@ -9,16 +9,15 @@
 <body>
     <div class="container">
         <h1>🌸 Jogo de Par ou Ímpar 🌸</h1>
-        <p>Escolha sua opção e insira um número:</p>
+        <p>Digite um número entre 0 e 10:</p>
+        <input type="number" id="numeroUsuario" placeholder="Seu número" min="0" max="10">
+        <p>Agora escolha:</p>
         <div class="botoes">
-            <button onclick="escolher('par')">💗 Par 💗</button>
-            <button onclick="escolher('impar')">💞 Ímpar 💞</button>
+            <button onclick="jogar('par')">💗 Par 💗</button>
+            <button onclick="jogar('impar')">💞 Ímpar 💞</button>
         </div>
-        <input type="number" id="numeroUsuario" placeholder="Digite um número" min="0">
-        <button class="jogar" onclick="jogar()">🎀 Jogar 🎀</button>
         <p id="resultado"></p>
     </div>
     <script src="java.js"></script>
 </body>
 </html>
-
