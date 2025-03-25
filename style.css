@@ -1,10 +1,10 @@
-/* Importando a fonte estilosa */
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* Importando uma fonte tradicional e elegante */
+@import url('https://fonts.googleapis.com/css2?family=Verdana:wght@400;700&display=swap');
 
 body {
-    font-family: 'Pacifico', cursive;
-    background: linear-gradient(135deg, #ff66b2, #7a00cc);
-    color: white;
+    font-family: 'Verdana', sans-serif;
+    background: #ffdde1;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,31 +14,31 @@ body {
     position: relative;
 }
 
-/* Adicionando brilhos animados no fundo */
+/* Fundo com efeito de glitter animado */
 body::before {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, transparent 10%);
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 10%, transparent 10%);
     background-size: 50px 50px;
-    opacity: 0.3;
-    animation: sparkle 4s infinite linear;
+    opacity: 0.5;
+    animation: glitter 3s infinite linear;
 }
 
-@keyframes sparkle {
+@keyframes glitter {
     0% { background-position: 0 0; }
     100% { background-position: 100px 100px; }
 }
 
-/* Caixa do jogo com efeito de vidro */
+/* Caixa do jogo */
 .container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.8);
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(12px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
     width: 320px;
 }
 
@@ -49,20 +49,15 @@ input {
     font-size: 18px;
     margin: 10px 0;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid #ff66b2;
     border-radius: 5px;
-    background: transparent;
-    color: white;
+    background: white;
+    color: #333;
 }
 
-input::placeholder {
-    color: white;
-    opacity: 0.6;
-}
-
-/* Botão animado */
+/* Botão estilizado */
 button {
-    background: #ff1493;
+    background: #ff66b2;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -70,11 +65,11 @@ button {
     font-size: 18px;
     border-radius: 10px;
     transition: 0.3s;
-    font-family: 'Pacifico', cursive;
+    font-weight: bold;
 }
 
 button:hover {
-    background: #ff007f;
+    background: #ff3385;
     transform: scale(1.1);
 }
 
