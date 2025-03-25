@@ -1,18 +1,22 @@
-function jogar(escolhaUsuario) {
-    let numeroUsuario = parseInt(document.getElementById("numeroUsuario").value);
-
-    if (isNaN(numeroUsuario) || numeroUsuario < 0 || numeroUsuario > 10) {
-        alert("Digite um número entre 0 e 10! 💞");
+function verificarParOuImpar() {
+    let numero = document.getElementById('numero').value;
+    let resultado = document.getElementById('resultado');
+    if (numero === '') {
+        resultado.innerHTML = 'Digite um número!';
         return;
     }
-
-    let numeroComputador = Math.floor(Math.random() * 11);
-    let divisao = numeroUsuario + numeroComputador;
-    let resultado = (divisao / 2 === 0) ? 'par' : 'impar';
-
-    let mensagem = `🎀 Você escolheu: ${escolhaUsuario.toUpperCase()}!<br>
-                    ✨ O resultado foi: ${resultado.toUpperCase()}! ✨<br>
-                    <strong>${escolhaUsuario === resultado ? '🎉 Você venceu! 🎉' : '💔 Você perdeu! 💔'}</strong>`;
-
-    document.getElementById("resultado").innerHTML = mensagem;
+    resultado.innerHTML = (numero % 2 === 0) ? 'O número é <b>Par</b>!' : 'O número é <b>Ímpar</b>!';
 }
+
+function criarBrilhos() {
+    const brilhoContainer = document.querySelector('.brilhos');
+    for (let i = 0; i < 50; i++) {
+        let brilho = document.createElement('div');
+        brilho.classList.add('brilho');
+        brilho.style.top = Math.random() * 100 + 'vh';
+        brilho.style.left = Math.random() * 100 + 'vw';
+        brilho.style.animationDelay = Math.random() * 2 + 's';
+        brilhoContainer.appendChild(brilho);
+    }
+}
+criarBrilhos();

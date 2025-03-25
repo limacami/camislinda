@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo Par ou Ímpar</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jogo de Par ou Ímpar</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="corpo1">
+<body>
+    <div class="brilhos"></div>
     <div class="container">
-        <h1>🌸 Jogo de Par ou Ímpar 🌸</h1>
-        <p>Digite um número entre 0 e 10:</p>
-        <input type="number" id="numeroUsuario" placeholder="Seu número" min="0" max="10">
-        <p>Agora escolha:</p>
-        <div class="botoes">
-            <button onclick="jogar('par')">💗 Par 💗</button>
-            <button onclick="jogar('impar')">💞 Ímpar 💞</button>
-        </div>
-        <p id="resultado"></p>
+        <h1>Jogo de Par ou Ímpar</h1>
+        <input type="number" id="numero" placeholder="Digite um número">
+        <button onclick="verificarParOuImpar()">Continuar</button>
+        <div class="resultado" id="resultado"></div>
     </div>
-    <script src="java.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
