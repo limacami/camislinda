@@ -1,124 +1,41 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #ffccdd;
+    text-align: center;
+    padding: 50px;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-header {
-    background-color: #f0c4d4;
-    padding: 50px 0;
-    text-align: center;
-    border-bottom: 5px solid #e0b0b9;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.header-image {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.header-text {
-    text-align: left;
-}
-
-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3em;
-    color: #5c2b5c;
-}
-
-header p {
-    font-size: 1.2em;
-    color: #7a4a5a;
-}
-
-section {
-    padding: 40px 0;
-}
-
-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
-    color: #5c2b5c;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-section p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #7a4a5a;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.intro, .historical-techniques, .evolution {
-    background-color: #fff2f3;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #ff99cc;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ff6699;
+    display: inline-block;
 }
 
-.photo-gallery {
-    background-color: #fef7f7;
-    padding: 40px 0;
-}
-
-.gallery {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.photo {
-    background-color: #fff;
-    width: 22%;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 10px;
-}
-
-.photo img {
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-    height: 200px;
-    .minha-imagem {
-        width: 100%;   /* A imagem ocupará 100% da largura do container */
-        height: auto;  /* A altura será ajustada automaticamente para manter a proporção */
-    }
-    
-}
-
-footer {
-    background-color: #5c2b5c;
+button {
+    background: #ff6699;
     color: white;
-    padding: 20px 0;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff3366;
+}
+
+input {
+    padding: 5px;
+    border: 2px solid #ff6699;
+    border-radius: 5px;
     text-align: center;
 }
 
-footer p {
-    font-size: 1em;
+#resultado {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #990033;
 }

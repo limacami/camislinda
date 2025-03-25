@@ -3,72 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>História da Fotografia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Jogo Par ou Ímpar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <img src="foto.jpg" alt="Imagem de Fotografia" class="header-image">
-                <div class="header-text">
-                    <h1>História da Fotografia</h1>
-                    <p>Da invenção à revolução digital</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="intro">
-        <div class="container">
-            <h2>Origem da Fotografia</h2>
-            <p>A fotografia surgiu no século XIX, com invenções que revolucionaram a forma de capturar e registrar momentos. Sua origem é marcada por uma série de descobertas científicas, como a câmara escura, que permitiram aos primeiros fotógrafos criar imagens duradouras.</p>
-        </div>
-    </section>
-
-    <section class="historical-techniques">
-        <div class="container">
-            <h2>Técnicas Antigas</h2>
-            <p>Nos primórdios da fotografia, as técnicas eram extremamente complexas. O daguerreótipo, inventado por Louis Daguerre, foi o primeiro processo fotográfico comercializado. A partir daí, novas técnicas como o ambrotipo e tintype se popularizaram, até a chegada da fotografia em película.</p>
-        </div>
-    </section>
-
-    <section class="evolution">
-        <div class="container">
-            <h2>A Evolução da Fotografia</h2>
-            <p>Ao longo do tempo, a fotografia passou por uma verdadeira revolução, com a introdução das câmeras digitais, smartphones e a popularização das redes sociais. Cada inovação trouxe novas possibilidades para fotógrafos e amantes da fotografia.</p>
-        </div>
-    </section>
-
-    <section class="photo-gallery">
-        <div class="container">
-            <h2>Galeria de Fotos Famosas</h2>
-            <div class="gallery">
-                <div class="photo">
-                    <img src="tanque.jpg" alt="Descrição da imagem" class="minha-imagem">
-                    <p>Foto 1: "O Homem Tanque" (1989), de Jeff Widener ,</p>
-                </div>
-                <div class="photo">
-                    <img src="beijo 2.jpg" alt="Foto Famosa 2">
-                    <p>Foto 2: "V-J Day in Times Square" (1945), de Alfred Eisenstaedt</p>
-                </div>
-                <div class="photo">
-                    <img src="sla.webp" alt="Foto Famosa 3">
-                    <p>Foto 3: "Afghan Girl" (1984), de Steve McCurry</p>
-                </div>
-                <div class="photo">
-                    <img src="lua.jpeg" alt="Foto Famosa 4">
-                    <p>Foto 4: "Earthrise" (1968), de William Anders</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>feito com amor e esforço.    contato 41 9636-9854
-        </div>
-    </footer>
+    <div class="container">
+        <h2>Jogo de Par ou Ímpar</h2>
+        <p>Escolha entre Par ou Ímpar e insira um número:</p>
+        <button onclick="escolher('par')">Par</button>
+        <button onclick="escolher('impar')">Ímpar</button>
+        <br><br>
+        <input type="number" id="numeroUsuario" placeholder="Seu número" min="0">
+        <button onclick="jogar()">Jogar</button>
+        <p id="resultado"></p>
+    </div>
+    <script src="java.js"></script>
 </body>
 </html>
