@@ -1,30 +1,17 @@
-let escolhaUsuario = '';
-
-function escolher(opcao) {
-    escolhaUsuario = opcao;
-    alert("Você escolheu " + opcao.toUpperCase() + " 🌸");
-}
-
-function jogar() {
-    if (!escolhaUsuario) {
-        alert("Escolha Par ou Ímpar antes de jogar! 💖");
-        return;
-    }
-
+function jogar(escolhaUsuario) {
     let numeroUsuario = parseInt(document.getElementById("numeroUsuario").value);
-    if (isNaN(numeroUsuario)) {
-        alert("Digite um número válido! 💞");
+
+    if (isNaN(numeroUsuario) || numeroUsuario < 0 || numeroUsuario > 10) {
+        alert("Digite um número entre 0 e 10! 💞");
         return;
     }
 
-    let numeroComputador = Math.floor(Math.random() * 10);
+    let numeroComputador = Math.floor(Math.random() * 11);
     let soma = numeroUsuario + numeroComputador;
     let resultado = (soma % 2 === 0) ? 'par' : 'impar';
 
-    let mensagem = `Você escolheu: ${escolhaUsuario.toUpperCase()}!<br>
-                    🎀 Seu número: ${numeroUsuario} <br>
-                    🎀 Número do computador: ${numeroComputador} <br>
-                    ✨ Soma: ${soma} (${resultado.toUpperCase()}) ✨<br>
+    let mensagem = `🎀 Você escolheu: ${escolhaUsuario.toUpperCase()}!<br>
+                    ✨ O resultado foi: ${resultado.toUpperCase()}! ✨<br>
                     <strong>${escolhaUsuario === resultado ? '🎉 Você venceu! 🎉' : '💔 Você perdeu! 💔'}</strong>`;
 
     document.getElementById("resultado").innerHTML = mensagem;
