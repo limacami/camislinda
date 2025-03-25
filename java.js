@@ -7,8 +7,8 @@ function jogar(escolhaUsuario) {
     }
 
     let numeroComputador = Math.floor(Math.random() * 11);
-    let soma = numeroUsuario + numeroComputador;
-    let resultado = (soma % 2 === 0) ? 'par' : 'impar';
+    let divisao = numeroUsuario + numeroComputador;
+    let resultado = (divisao / 2 === 0) ? 'par' : 'impar';
 
     let mensagem = `🎀 Você escolheu: ${escolhaUsuario.toUpperCase()}!<br>
                     ✨ O resultado foi: ${resultado.toUpperCase()}! ✨<br>
