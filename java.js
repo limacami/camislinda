@@ -2,7 +2,7 @@ let escolhaUsuario = '';
 
 function escolher(opcao) {
     escolhaUsuario = opcao;
-    alert("Você escolheu " + opcao.toUpperCase() + " ✨");
+    alert("Você escolheu " + opcao.toUpperCase() + " 🌸");
 }
 
 function jogar() {
@@ -13,7 +13,7 @@ function jogar() {
 
     let numeroUsuario = parseInt(document.getElementById("numeroUsuario").value);
     if (isNaN(numeroUsuario)) {
-        alert("Digite um número válido! 💜");
+        alert("Digite um número válido! 💞");
         return;
     }
 
@@ -22,11 +22,10 @@ function jogar() {
     let resultado = (soma % 2 === 0) ? 'par' : 'impar';
 
     let mensagem = `Você escolheu: ${escolhaUsuario.toUpperCase()}!<br>
-                    💖 Seu número: ${numeroUsuario} <br>
-                    💜 Número do computador: ${numeroComputador} <br>
+                    🎀 Seu número: ${numeroUsuario} <br>
+                    🎀 Número do computador: ${numeroComputador} <br>
                     ✨ Soma: ${soma} (${resultado.toUpperCase()}) ✨<br>
                     <strong>${escolhaUsuario === resultado ? '🎉 Você venceu! 🎉' : '💔 Você perdeu! 💔'}</strong>`;
 
     document.getElementById("resultado").innerHTML = mensagem;
 }
-
