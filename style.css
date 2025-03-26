@@ -1,4 +1,4 @@
-/* Fundo preto com efeito de pontos de luz */
+
 body {
     font-family: Arial, sans-serif;
     background: black;
@@ -12,7 +12,7 @@ body {
     overflow: hidden;
 }
 
-/* Criando estrelas brilhantes */
+
 .stars {
     position: absolute;
     width: 100%;
@@ -28,7 +28,7 @@ body {
     100% { opacity: 1; }
 }
 
-/* Caixa principal */
+
 .container {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -40,13 +40,13 @@ body {
     z-index: 2;
 }
 
-/* Título */
+
 h1 {
     color: #fff;
     text-shadow: 0px 0px 15px #ff00ff;
 }
 
-/* Caixa de entrada */
+
 input {
     width: 80%;
     padding: 10px;
@@ -61,12 +61,12 @@ input {
     transition: box-shadow 0.3s ease-in-out;
 }
 
-/* Efeito de brilho ao focar */
+
 input:focus {
     box-shadow: 0px 0px 15px #ff00ff;
 }
 
-/* Botão neon */
+
 button {
     background: linear-gradient(45deg, #ff00ff, #ff1493);
     color: white;
@@ -79,14 +79,12 @@ button {
     box-shadow: 0px 0px 15px #ff00ff;
 }
 
-/* Efeito neon ao passar o mouse */
 button:hover {
     background: linear-gradient(45deg, #ff1493, #ff00ff);
     box-shadow: 0px 0px 25px #ff00ff;
     transform: scale(1.05);
 }
 
-/* Texto do resultado */
 p#resultado {
     font-size: 22px;
     margin-top: 15px;
@@ -97,7 +95,6 @@ p#resultado {
     transform: scale(0.8);
 }
 
-/* Efeito ao mostrar o resultado */
 p#resultado.show {
     opacity: 1;
     transform: scale(1);
