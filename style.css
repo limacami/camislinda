@@ -1,54 +1,80 @@
-.body {
+/* Fundo preto com efeito de glitter */
+body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background: black;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 4px 4px;
+    background-position: 0 0, 2px 2px;
     text-align: center;
     margin: 0;
     padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Caixa principal */
 .container {
-    background: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
     max-width: 350px;
-    margin: 100px auto;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Título */
 h1 {
-    color: #ff5e78;
+    color: #fff;
+    text-shadow: 0px 0px 10px #ff00ff;
 }
 
+/* Caixa de entrada */
 input {
     width: 80%;
     padding: 10px;
     margin: 10px 0;
-    border: 2px solid #ff5e78;
+    border: 2px solid #ff00ff;
     border-radius: 6px;
     font-size: 16px;
     outline: none;
+    background: black;
+    color: white;
+    text-align: center;
 }
 
+/* Botão neon */
 button {
-    background-color: #ff5e78;
+    background: linear-gradient(45deg, #ff00ff, #ff1493);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 6px;
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0px 0px 10px #ff00ff;
 }
 
 button:hover {
-    background-color: #e04b60;
+    background: linear-gradient(45deg, #ff1493, #ff00ff);
+    box-shadow: 0px 0px 20px #ff00ff;
 }
 
+/* Texto do resultado */
 p#resultado {
-    font-size: 20px;
+    font-size: 22px;
     margin-top: 15px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
     opacity: 0;
-    transition: opacity 0.5 ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(0.8);
+}
+
+/* Efeito ao mostrar o resultado */
+p#resultado.show {
+    opacity: 1;
+    transform: scale(1);
 }

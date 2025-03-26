@@ -1,29 +1,34 @@
+document.getElementById("btnVerificar").addEventListener("click", function() {
+    verificarParOuImpar();
+});
+
 function verificarParOuImpar() {
-    let numeroInput = document.getElementById("numero").value;
+    let numero = document.getElementById("numero").value;
     let resultado = document.getElementById("resultado");
 
-    // Verifica se o usuário digitou algo
-    if (numeroInput === "") {
-        resultado.textContent = "Por favor, digite um número!";
+    if (numero === "") {
         resultado.style.color = "red";
+        resultado.textContent = "Por favor, insira um número!";
+        resultado.classList.add("show");
         return;
     }
 
-    let numero = parseInt(numeroInput);
-
-    // Verifica se é um número válido
+    numero = parseInt(numero);
+    
     if (isNaN(numero)) {
-        resultado.textContent = "Isso não é um número válido!";
         resultado.style.color = "red";
+        resultado.textContent = "Isso não é um número válido!";
+        resultado.classList.add("show");
         return;
     }
 
-    // Verifica se é par ou ímpar
     if (numero % 2 === 0) {
-        resultado.textContent = `O número ${numero} é PAR!`;
-        resultado.style.color = "green";
+        resultado.style.color = "#00ffcc";
+        resultado.textContent = `O número ${numero} é Par! 🎉`;
     } else {
-        resultado.textContent = `O número ${numero} é ÍMPAR!`;
-        resultado.style.color = "blue";
+        resultado.style.color = "#ffcc00";
+        resultado.textContent = `O número ${numero} é Ímpar! 🔵`;
     }
+
+    resultado.classList.add("show");
 }
