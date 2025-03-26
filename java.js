@@ -27,4 +27,3 @@ function verificarParOuImpar() {
         resultado.style.color = "blue";
     }
 }
-s

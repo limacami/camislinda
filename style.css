@@ -1,81 +1,54 @@
-/* Importando uma fonte tradicional e elegante */
-@import url('https://fonts.googleapis.com/css2?family=Verdana:wght@400;700&display=swap');
-
-body {
-    font-family: 'Verdana', sans-serif;
-    background: #ffdde1;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    text-align: center;
     margin: 0;
-    overflow: hidden;
-    position: relative;
+    padding: 0;
 }
 
-/* Fundo com efeito de glitter animado */
-body::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.4) 10%, transparent 10%);
-    background-size: 50px 50px;
-    opacity: 0.5;
-    animation: glitter 3s infinite linear;
-}
-
-@keyframes glitter {
-    0% { background-position: 0 0; }
-    100% { background-position: 100px 100px; }
-}
-
-/* Caixa do jogo */
 .container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-    width: 320px;
-}
-
-/* Campo de entrada */
-input {
-    width: 100px;
-    padding: 8px;
-    font-size: 18px;
-    margin: 10px 0;
-    text-align: center;
-    border: 2px solid #ff66b2;
-    border-radius: 5px;
     background: white;
-    color: #333;
+    max-width: 350px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Botão estilizado */
+h1 {
+    color: #ff5e78;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ff5e78;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+}
+
 button {
-    background: #ff66b2;
+    background-color: #ff5e78;
     color: white;
     border: none;
-    padding: 12px 20px;
-    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 6px;
     font-size: 18px;
-    border-radius: 10px;
+    cursor: pointer;
     transition: 0.3s;
-    font-weight: bold;
 }
 
 button:hover {
-    background: #ff3385;
-    transform: scale(1.1);
+    background-color: #e04b60;
 }
 
-/* Texto do resultado */
-p {
+p#resultado {
     font-size: 20px;
+    margin-top: 15px;
     font-weight: bold;
-    margin-top: 10px;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.5 ease-in-out;
 }
