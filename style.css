@@ -63,6 +63,25 @@ h1 {
     font-weight: bold;
 }
 
+.restart-area {
+    margin-top: 20px;
+}
+
+#restart-button {
+    background-color: #a1c4fd; /* Azul pastel */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#restart-button:hover {
+    background-color: #6699ff; /* Azul mais forte */
+}
+
 /* Adicionando um laço fofo na parte superior da caixinha */
 .container::before {
     content: "";
@@ -89,8 +108,3 @@ h1 {
     background-color: #fff;
     border-radius: 50%;
 }
-
-.stats p {
-    margin-top: 10px;
-}
-
