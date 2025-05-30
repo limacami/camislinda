@@ -1,3 +1,4 @@
+/* Resetando alguns estilos padrão */
 * {
     margin: 0;
     padding: 0;
@@ -5,117 +6,58 @@
 }
 
 body {
-    font-family: 'Verdana', sans-serif;
-    background-color: #f8f1fa; /* Fundo lilás suave */
-    color: #5e3c5c; /* Cor de texto suave e feminina */
+    font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #20232a;
+    color: white;
+    text-align: center;
 }
 
 .container {
-    text-align: center;
-    background-color: #fff;
+    background: #d32f2f;
     padding: 30px;
-    border-radius: 30px; /* Borda bem arredondada para um toque suave */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    width: 340px;
-    border: 3px solid #f9c6f6; /* Borda em rosa bem suave */
-    position: relative;
+    border-radius: 10px;
+    width: 300px;
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #d79bd2; /* Cor delicada e feminina */
-    font-weight: bold;
-    font-family: 'Georgia', serif; /* Fonte elegante */
-    letter-spacing: 2px;
-}
-
-.click-area {
+    color: #fff;
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
-#click-button {
-    background-color: #ffafcc; /* Rosa claro com toque suave */
-    color: white;
-    border: none;
-    padding: 18px 35px;
-    font-size: 1.4rem;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
+.scoreboard {
+    margin-bottom: 20px;
 }
 
-#click-button:hover {
-    background-color: #ff7fa7; /* Rosa mais forte para o efeito de hover */
-}
-
-.stats {
-    font-size: 1.3rem;
-    color: #b28db5; /* Roxo suave e feminino */
-    font-weight: 500;
-}
-
-.stats span {
+#clicks, #highscore {
+    color: #ffeb3b;
     font-weight: bold;
 }
 
-.restart-area {
-    margin-top: 30px;
-}
-
-#restart-button {
-    background-color: #d9aad9; /* Cor de botão delicada */
-    color: white;
+.btn {
+    background-color: #000;
+    color: #fff;
     border: none;
-    padding: 12px 25px;
-    font-size: 1.2rem;
-    border-radius: 20px;
+    padding: 15px;
+    font-size: 16px;
+    margin-top: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-#restart-button:hover {
-    background-color: #b577b5; /* Rosa mais forte para o hover */
+.btn:hover {
+    background-color: #f44336;
 }
 
-/* Adicionando um laço fofo e mais delicado no topo */
-.container::before {
-    content: "";
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
-    background-color: #f7a7cc; /* Rosa claro */
-    border-radius: 50%;
-    border: 5px solid #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    z-index: 1;
+#startButton {
+    background-color: #00796b;
 }
 
-/* Retirando a bolinha do meio */
-.container::after {
-    content: "";
-    position: absolute;
-    top: -40px;  /* Coloquei um pouco mais para cima para remover o círculo central */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    background-color: transparent;
-    border-radius: 50%;
-}
-
-/* Efeito de borda delicada ao redor da caixa */
-.container {
-    background: linear-gradient(135deg, rgba(255, 239, 250, 0.7), rgba(250, 220, 230, 0.7));
-    border-radius: 25px;
-    padding: 40px;
+#startButton:hover {
+    background-color: #004d40;
 }

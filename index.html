@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo de Clique</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contador de Cliques - Homem-Aranha</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Jogo de Clique</h1>
-        <div class="click-area">
-            <button id="click-button">Clique aqui!</button>
+        <h1>Contador de Cliques - Homem-Aranha</h1>
+        
+        <div class="scoreboard">
+            <p><strong>Cliques: </strong><span id="clicks">0</span></p>
+            <p><strong>Recorde: </strong><span id="highscore">0</span></p>
         </div>
-        <div class="stats">
-            <p><strong>Cliques:</strong> <span id="click-count">0</span></p>
-            <p><strong>Recorde:</strong> <span id="highscore">0</span></p>
-        </div>
-        <div class="restart-area">
+        
+        <button id="clickButton" class="btn">Clique aqui!</button>
+        <button id="startButton" class="btn" onclick="startGame()">Iniciar</button>
+    </div>
+
+    <script src="java.js"></script>
+</body>
+</html>

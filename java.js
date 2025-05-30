@@ -1,31 +1,34 @@
 let clickCount = 0;
-let highscore = localStorage.getItem('highscore') || 0;
+let highscore = 0;
+let gameStarted = false;
 
-// Atualiza a contagem de cliques e o recorde
-function updateStats() {
-    document.getElementById('click-count').textContent = clickCount;
-
-    if (clickCount > highscore) {
-        highscore = clickCount;
-        document.getElementById('highscore').textContent = highscore;
-        localStorage.setItem('highscore', highscore); // Salvar no localStorage
+// Função para começar o jogo
+function startGame() {
+    if (!gameStarted) {
+        gameStarted = true;
+        document.getElementById('clickButton').disabled = false;
+        clickCount = 0;
+        updateDisplay();
     }
 }
 
-// Função para reiniciar o jogo
-function restartGame() {
-    clickCount = 0;
-    updateStats();
+// Função para atualizar os elementos na tela
+function updateDisplay() {
+    document.getElementById('clicks').textContent = clickCount;
+    document.getElementById('highscore').textContent = highscore;
 }
 
-// Adicionar eventos aos botões
-document.getElementById('click-button').addEventListener('click', () => {
+// Função de clique no botão
+document.getElementById('clickButton').addEventListener('click', function () {
+    if (!gameStarted) return;
+
     clickCount++;
-    updateStats();
+
+    // Atualiza o recorde se o número de cliques for maior
+    if (clickCount > highscore) {
+        highscore = clickCount;
+    }
+
+    updateDisplay();
 });
-
-document.getElementById('restart-button').addEventListener('click', restartGame);
-
-// Inicializar o jogo com as informações atuais
-updateStats();
 
