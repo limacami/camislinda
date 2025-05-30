@@ -1,4 +1,4 @@
-llet clickCount = 0;
+let clickCount = 0;
 let highscore = localStorage.getItem('highscore') || 0;
 
 document.getElementById('click-button').addEventListener('click', () => {
