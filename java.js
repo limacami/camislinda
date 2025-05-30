@@ -28,3 +28,4 @@ document.getElementById('restart-button').addEventListener('click', restartGame)
 
 // Inicializar o jogo com as informações atuais
 updateStats();
+
