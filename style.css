@@ -97,17 +97,19 @@ h1 {
     border-radius: 50%;
     border: 5px solid #fff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
+/* Retirando a bolinha do meio */
 .container::after {
     content: "";
     position: absolute;
-    top: -45px;
+    top: -40px;  /* Coloquei um pouco mais para cima para remover o círculo central */
     left: 50%;
     transform: translateX(-50%);
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
+    width: 0;
+    height: 0;
+    background-color: transparent;
     border-radius: 50%;
 }
 
@@ -117,4 +119,3 @@ h1 {
     border-radius: 25px;
     padding: 40px;
 }
-
