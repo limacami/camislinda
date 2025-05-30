@@ -1,11 +1,13 @@
-let contador = 0;
+llet clickCount = 0;
+let highscore = localStorage.getItem('highscore') || 0;
 
-function mostrarMensagem() {
-  contador++;
-  const msg = document.getElementById('mensagem');
-  msg.textContent = `Você clicou ${contador} ${contador === 1 ? 'vez' : 'vezes'}! 💖`;
-  msg.style.fontWeight = 'bold';
-  msg.style.fontSize = '1.4em';
-  msg.style.transition = 'all 0.3s ease';
-  msg.style.color = '#e75480';
-}
+document.getElementById('click-button').addEventListener('click', () => {
+    clickCount++;
+    document.getElementById('click-count').textContent = clickCount;
+
+    if (clickCount > highscore) {
+        highscore = clickCount;
+        document.getElementById('highscore').textContent = highscore;
+        localStorage.setItem('highscore', highscore); // Salvar o recorde no localStorage
+    }
+});

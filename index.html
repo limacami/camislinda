@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Delicado</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Clique</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Bem-vindo ao Meu Joguinho</h1>
-    </header>
+    <div class="container">
+        <h1>Jogo de Clique</h1>
+        <div class="click-area">
+            <button id="click-button">Clique aqui!</button>
+        </div>
+        <div class="stats">
+            <p><strong>Clipes atuais:</strong> <span id="click-count">0</span></p>
+            <p><strong>Recorde:</strong> <span id="highscore">0</span></p>
+        </div>
+    </div>
 
-    <main>
-      <section class="intro">
-        <p>Este é um espaço é para se distrair um pouco🤗</p>
-        <button onclick="mostrarMensagem()">Clique aqui</button>
-        <p id="mensagem" class="mensagem"></p>
-      </section>
-    </main>
-
-    <footer>
-      <p> 💖 </p>
-    </footer>
-  </div>
-
-  <script src="java.js"></script>
+    <script src="java.js"></script>
 </body>
 </html>
