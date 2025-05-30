@@ -11,16 +11,17 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #20232a;
-    color: white;
+    background-color: #fce4ec; /* Cor de fundo rosinha */
+    color: #000;
     text-align: center;
 }
 
 .container {
-    background: #d32f2f;
+    background: #ec407a; /* Rosa mais forte para o fundo */
     padding: 30px;
     border-radius: 10px;
     width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -34,12 +35,12 @@ h1 {
 }
 
 #clicks, #highscore {
-    color: #ffeb3b;
+    color: #fff;
     font-weight: bold;
 }
 
 .btn {
-    background-color: #000;
+    background-color: #000; /* Botão preto */
     color: #fff;
     border: none;
     padding: 15px;
@@ -51,13 +52,13 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #f44336;
+    background-color: #d81b60; /* Rosa mais forte no hover */
 }
 
 #startButton {
-    background-color: #00796b;
+    background-color: #d81b60; /* Rosa escuro para o botão iniciar */
 }
 
 #startButton:hover {
-    background-color: #004d40;
+    background-color: #c2185b; /* Rosa mais forte no hover do start */
 }
