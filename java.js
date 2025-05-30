@@ -6,9 +6,9 @@ let gameStarted = false;
 function startGame() {
     if (!gameStarted) {
         gameStarted = true;
-        document.getElementById('clickButton').disabled = false;
-        clickCount = 0;
-        updateDisplay();
+        document.getElementById('clickButton').disabled = false;  // Ativa o botão de clique
+        clickCount = 0;  // Reinicia o contador de cliques
+        updateDisplay();  // Atualiza os valores na tela
     }
 }
 
@@ -29,6 +29,7 @@ document.getElementById('clickButton').addEventListener('click', function () {
         highscore = clickCount;
     }
 
-    updateDisplay();
+    updateDisplay();  // Atualiza a tela sempre que houver um clique
 });
+
 
