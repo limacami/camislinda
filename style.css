@@ -1,4 +1,4 @@
-/* Resetando alguns estilos padrão */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -11,13 +11,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #fce4ec; /* Cor de fundo rosinha */
+    background-color: #fce4ec;
     color: #000;
     text-align: center;
 }
 
 .container {
-    background: #ec407a; /* Rosa mais forte para o fundo */
+    background: #ec407a;
     padding: 30px;
     border-radius: 10px;
     width: 300px;
@@ -40,25 +40,30 @@ h1 {
 }
 
 .btn {
-    background-color: #000; /* Botão preto */
+    background-color: #000;
     color: #fff;
     border: none;
     padding: 15px;
     font-size: 16px;
-    margin-top: 10px;
+    margin: 10px 5px 0;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .btn:hover {
-    background-color: #d81b60; /* Rosa mais forte no hover */
+    background-color: #d81b60;
 }
 
 #startButton {
-    background-color: #d81b60; /* Rosa escuro para o botão iniciar */
+    background-color: #d81b60;
 }
 
 #startButton:hover {
-    background-color: #c2185b; /* Rosa mais forte no hover do start */
+    background-color: #c2185b;
+}
+
+#clickButton:disabled {
+    background-color: #888;
+    cursor: not-allowed;
 }
