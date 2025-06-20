@@ -6,6 +6,7 @@ const clicksDisplay = document.getElementById('clicks');
 const highscoreDisplay = document.getElementById('highscore');
 const clickButton = document.getElementById('clickButton');
 const startButton = document.getElementById('startButton');
+const resetButton = document.getElementById('resetButton');
 
 function updateDisplay() {
     clicksDisplay.textContent = clickCount;
@@ -28,5 +29,12 @@ clickButton.addEventListener('click', () => {
     if (clickCount > highscore) {
         highscore = clickCount;
     }
+    updateDisplay();
+});
+
+resetButton.addEventListener('click', () => {
+    gameStarted = false;
+    clickCount = 0;
+    clickButton.disabled = true;
     updateDisplay();
 });
