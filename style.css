@@ -1,27 +1,32 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Fundo glitter animado */
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #fce4ec;
     color: #000;
     text-align: center;
+    background: radial-gradient(circle, #fce4ec, #f8bbd0, #fce4ec);
+    background-size: 400% 400%;
+    animation: glitter 8s ease-in-out infinite;
 }
 
+/* Animação suave do fundo */
+@keyframes glitter {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container do jogo */
 .container {
-    background: #ec407a;
+    background: rgba(236, 64, 122, 0.9); /* Rosa com transparência */
     padding: 30px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 }
 
 h1 {
@@ -63,17 +68,16 @@ h1 {
     background-color: #c2185b;
 }
 
-#clickButton:disabled {
-    background-color: #888;
-    cursor: not-allowed;
-}
-/* ...código anterior permanece igual... */
-
 .reset {
     background-color: #ad1457;
 }
 
 .reset:hover {
     background-color: #880e4f;
+}
+
+#clickButton:disabled {
+    background-color: #888;
+    cursor: not-allowed;
 }
 
