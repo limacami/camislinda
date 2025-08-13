@@ -1,26 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador de Cliques</title>
+    <title>Missão Produção em Equipe</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Contador de Cliques </h1>
+    <header>
+        <h1>🎯 Missão Produção em Equipe</h1>
+        <p>Trabalhe em equipe para alcançar a meta antes que a rotatividade fique crítica!</p>
+    </header>
 
-        <div class="scoreboard">
-            <p><strong>Cliques: </strong><span id="clicks">0</span></p>
-            <p><strong>Recorde: </strong><span id="highscore">0</span></p>
-        </div>
+    <main>
+        <section id="board-section">
+            <img src="assets/tabuleiro.png" id="board" alt="Tabuleiro">
+            <div id="player"></div>
+        </section>
 
-        <button id="clickButton" class="btn" disabled>Clique aqui!</button>
-        <button id="startButton" class="btn">Iniciar</button>
-        <button id="resetButton" class="btn reset">🎀 Recomeçar</button>
-    </div>
+        <section id="controls">
+            <button id="rollDice">🎲 Rolar Dado</button>
+            <p id="diceResult">Resultado: -</p>
+
+            <div id="status">
+                <p>📈 Produtividade: <span id="produtividade">50</span></p>
+                <p>⚠️ Rotatividade: <span id="rotatividade">50</span></p>
+            </div>
+        </section>
+
+        <section id="card-section">
+            <h2>Carta</h2>
+            <div id="card"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Protótipo criado para treinamento de trabalho em equipe</p>
+    </footer>
 
     <script src="java.js"></script>
 </body>
 </html>
+
 

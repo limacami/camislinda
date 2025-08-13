@@ -1,83 +1,106 @@
-/* Fundo glitter animado */
+/* ======= ESTILO GERAL ======= */
 body {
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #000;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
     text-align: center;
-    background: radial-gradient(circle, #fce4ec, #f8bbd0, #fce4ec);
-    background-size: 400% 400%;
-    animation: glitter 8s ease-in-out infinite;
+    background-color: #00796b;
+    color: white;
+    padding: 20px;
 }
 
-/* Animação suave do fundo */
-@keyframes glitter {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+header h1 {
+    margin: 0;
 }
 
-/* Container do jogo */
-.container {
-    background: rgba(236, 64, 122, 0.9); /* Rosa com transparência */
-    padding: 30px;
-    border-radius: 15px;
-    width: 320px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
 
-h1 {
-    color: #fff;
-    font-size: 24px;
-    margin-bottom: 20px;
+/* ======= TABULEIRO ======= */
+#board-section {
+    position: relative;
+    margin: 20px;
 }
 
-.scoreboard {
-    margin-bottom: 20px;
+#board {
+    width: 500px;
+    border: 5px solid #004d40;
+    border-radius: 10px;
 }
 
-#clicks, #highscore {
-    color: #fff;
-    font-weight: bold;
+#player {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    top: 450px; /* posição inicial */
+    left: 20px;
 }
 
-.btn {
-    background-color: #000;
-    color: #fff;
+/* ======= CONTROLES ======= */
+#controls {
+    margin: 20px;
+    text-align: center;
+}
+
+#rollDice {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #009688;
+    color: white;
     border: none;
-    padding: 15px;
-    font-size: 16px;
-    margin: 10px 5px 0;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
 }
 
-.btn:hover {
-    background-color: #d81b60;
+#rollDice:hover {
+    background-color: #00796b;
 }
 
-#startButton {
-    background-color: #d81b60;
+#status {
+    margin-top: 15px;
+    font-size: 18px;
 }
 
-#startButton:hover {
-    background-color: #c2185b;
+/* ======= CARTAS ======= */
+#card-section {
+    width: 300px;
+    background-color: #f1f8e9;
+    border: 2px solid #c5e1a5;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px;
+    text-align: center;
 }
 
-.reset {
-    background-color: #ad1457;
+#card {
+    min-height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px dashed #8bc34a;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.reset:hover {
-    background-color: #880e4f;
-}
-
-#clickButton:disabled {
-    background-color: #888;
-    cursor: not-allowed;
+/* ======= RODAPÉ ======= */
+footer {
+    text-align: center;
+    background-color: #00796b;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
 }
 
