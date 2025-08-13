@@ -3,6 +3,17 @@ let posicao = 0; // posição inicial no tabuleiro
 let produtividade = 50;
 let rotatividade = 50;
 
+// Coordenadas reais das casas (x e y) - ajuste para seu tabuleiro
+const casas = [
+    { x: 20, y: 450 }, { x: 70, y: 450 }, { x: 120, y: 450 },
+    { x: 170, y: 450 }, { x: 220, y: 450 }, { x: 270, y: 450 },
+    { x: 320, y: 450 }, { x: 370, y: 450 }, { x: 420, y: 450 },
+    { x: 470, y: 450 }, { x: 470, y: 350 }, { x: 420, y: 350 },
+    { x: 370, y: 350 }, { x: 320, y: 350 }, { x: 270, y: 350 },
+    { x: 220, y: 350 }, { x: 170, y: 350 }, { x: 120, y: 350 },
+    { x: 70, y: 350 },  { x: 20, y: 350 }, { x: 20, y: 250 }
+];
+
 // Lista de cartas de desafio
 const desafios = [
     "Conflito entre colegas: +10 de Rotatividade",
@@ -31,58 +42,59 @@ document.getElementById("rollDice").addEventListener("click", () => {
     let dado = Math.floor(Math.random() * 6) + 1;
     diceResult.textContent = `Resultado: ${dado}`;
     moverJogador(dado);
-    verificarVitoria();
 });
 
-// ======== MOVIMENTO DO JOGADOR ========
+// ======== MOVIMENTO SUAVE DO JOGADOR ========
 function moverJogador(passos) {
-    posicao += passos;
+    let destino = posicao + passos;
+    if (destino >= casas.length) destino = casas.length - 1;
 
-    // Limite de posições (20 casas no tabuleiro)
-    if (posicao > 20) posicao = 20;
+    let i = posicao;
 
-    // Atualiza posição visual (simples: esquerda para direita)
-    let novaLeft = 20 + (posicao * 20);
-    let novaTop = 450 - (Math.floor(posicao / 5) * 100);
-
-    player.style.left = novaLeft + "px";
-    player.style.top = novaTop + "px";
-
-    // Sorteia evento
-    if (Math.random() < 0.5) {
-        puxarCarta(desafios, "desafio");
-    } else {
-        puxarCarta(solucoes, "solução");
+    function animar() {
+        if (i < destino) {
+            i++;
+            player.style.left = casas[i].x + "px";
+            player.style.top = casas[i].y + "px";
+            setTimeout(animar, 300); // velocidade
+        } else {
+            posicao = destino;
+            sortearCarta();
+            verificarVitoria();
+        }
     }
+    animar();
 }
 
-// ======== CARTAS ========
-function puxarCarta(lista, tipo) {
-    let carta = lista[Math.floor(Math.random() * lista.length)];
+// ======== SORTEAR CARTA ========
+function sortearCarta() {
+    const tipo = Math.random() < 0.5 ? "desafio" : "solucao";
+    const lista = tipo === "desafio" ? desafios : solucoes;
+    const carta = lista[Math.floor(Math.random() * lista.length)];
     cardDiv.textContent = carta;
-
-    if (tipo === "desafio") aplicarEfeito(carta, false);
-    else aplicarEfeito(carta, true);
+    aplicarEfeito(carta);
 }
 
-// ======== APLICA EFEITOS ========
-function aplicarEfeito(carta, positiva) {
-    if (carta.includes("Produtividade")) {
-        let valor = parseInt(carta.match(/([+-]?\d+)/));
-        produtividade += valor;
+// ======== APLICAR EFEITO ========
+function aplicarEfeito(carta) {
+    const matches = carta.match(/([+-]?\d+)\s*(Produtividade|Rotatividade)/gi);
+    if (matches) {
+        matches.forEach(m => {
+            const valor = parseInt(m);
+            if (m.toLowerCase().includes("produtividade")) {
+                produtividade += valor;
+            }
+            if (m.toLowerCase().includes("rotatividade")) {
+                rotatividade += valor;
+            }
+        });
     }
-    if (carta.includes("Rotatividade")) {
-        let valor = parseInt(carta.match(/([+-]?\d+)/));
-        rotatividade += valor;
-    }
+    // Limites
+    produtividade = Math.max(0, Math.min(produtividade, 100));
+    rotatividade = Math.max(0, Math.min(rotatividade, 100));
 
-    // Atualiza valores
     produtividadeSpan.textContent = produtividade;
     rotatividadeSpan.textContent = rotatividade;
-
-    // Limites
-    if (produtividade < 0) produtividade = 0;
-    if (rotatividade < 0) rotatividade = 0;
 }
 
 // ======== CHECAR VITÓRIA OU DERROTA ========
@@ -104,8 +116,9 @@ function resetarJogo() {
     rotatividade = 50;
     produtividadeSpan.textContent = produtividade;
     rotatividadeSpan.textContent = rotatividade;
-    player.style.left = "20px";
-    player.style.top = "450px";
+    player.style.left = casas[0].x + "px";
+    player.style.top = casas[0].y + "px";
     cardDiv.textContent = "";
 }
+
 
