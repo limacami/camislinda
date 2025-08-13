@@ -1,28 +1,25 @@
 // ======== VARIÁVEIS DO JOGO ========
-let posicao = 0; // posição inicial no tabuleiro
+let posicao = 0;
 let produtividade = 50;
 let rotatividade = 50;
 
-// Coordenadas reais das casas (x e y) - ajuste para seu tabuleiro
+// Coordenadas reais de cada casa do tabuleiro
 const casas = [
-    { x: 20, y: 450 }, { x: 70, y: 450 }, { x: 120, y: 450 },
-    { x: 170, y: 450 }, { x: 220, y: 450 }, { x: 270, y: 450 },
-    { x: 320, y: 450 }, { x: 370, y: 450 }, { x: 420, y: 450 },
-    { x: 470, y: 450 }, { x: 470, y: 350 }, { x: 420, y: 350 },
-    { x: 370, y: 350 }, { x: 320, y: 350 }, { x: 270, y: 350 },
-    { x: 220, y: 350 }, { x: 170, y: 350 }, { x: 120, y: 350 },
-    { x: 70, y: 350 },  { x: 20, y: 350 }, { x: 20, y: 250 }
+    { x: 55, y: 470 }, { x: 90, y: 430 }, { x: 125, y: 390 }, { x: 160, y: 350 },
+    { x: 200, y: 320 }, { x: 250, y: 300 }, { x: 300, y: 280 }, { x: 350, y: 270 },
+    { x: 400, y: 270 }, { x: 450, y: 280 }, { x: 480, y: 320 }, { x: 470, y: 370 },
+    { x: 440, y: 410 }, { x: 400, y: 440 }, { x: 350, y: 460 }, { x: 300, y: 470 },
+    { x: 250, y: 470 }, { x: 200, y: 460 }, { x: 150, y: 450 }, { x: 110, y: 440 },
+    { x: 80, y: 420 } // meta
 ];
 
-// Lista de cartas de desafio
+// Lista de cartas
 const desafios = [
     "Conflito entre colegas: +10 de Rotatividade",
     "Falta de comunicação na equipe: -10 de Produtividade",
     "Erro na produção por falta de cooperação: -5 Produtividade, +5 Rotatividade",
     "Novo funcionário sem treinamento: +8 Rotatividade"
 ];
-
-// Lista de cartas de solução
 const solucoes = [
     "Treinamento de trabalho em equipe: +10 Produtividade",
     "Reunião de alinhamento: -8 Rotatividade",
@@ -30,7 +27,7 @@ const solucoes = [
     "Liderança incentiva cooperação: +8 Produtividade"
 ];
 
-// Referências ao HTML
+// Elementos do HTML
 const player = document.getElementById("player");
 const produtividadeSpan = document.getElementById("produtividade");
 const rotatividadeSpan = document.getElementById("rotatividade");
@@ -44,19 +41,18 @@ document.getElementById("rollDice").addEventListener("click", () => {
     moverJogador(dado);
 });
 
-// ======== MOVIMENTO SUAVE DO JOGADOR ========
+// ======== MOVIMENTO SUAVE ========
 function moverJogador(passos) {
     let destino = posicao + passos;
     if (destino >= casas.length) destino = casas.length - 1;
 
     let i = posicao;
-
     function animar() {
         if (i < destino) {
             i++;
             player.style.left = casas[i].x + "px";
             player.style.top = casas[i].y + "px";
-            setTimeout(animar, 300); // velocidade
+            setTimeout(animar, 300);
         } else {
             posicao = destino;
             sortearCarta();
@@ -66,7 +62,7 @@ function moverJogador(passos) {
     animar();
 }
 
-// ======== SORTEAR CARTA ========
+// ======== SORTEIO DE CARTAS ========
 function sortearCarta() {
     const tipo = Math.random() < 0.5 ? "desafio" : "solucao";
     const lista = tipo === "desafio" ? desafios : solucoes;
@@ -75,7 +71,7 @@ function sortearCarta() {
     aplicarEfeito(carta);
 }
 
-// ======== APLICAR EFEITO ========
+// ======== APLICA EFEITO ========
 function aplicarEfeito(carta) {
     const matches = carta.match(/([+-]?\d+)\s*(Produtividade|Rotatividade)/gi);
     if (matches) {
@@ -89,7 +85,6 @@ function aplicarEfeito(carta) {
             }
         });
     }
-    // Limites
     produtividade = Math.max(0, Math.min(produtividade, 100));
     rotatividade = Math.max(0, Math.min(rotatividade, 100));
 
@@ -97,7 +92,7 @@ function aplicarEfeito(carta) {
     rotatividadeSpan.textContent = rotatividade;
 }
 
-// ======== CHECAR VITÓRIA OU DERROTA ========
+// ======== VITÓRIA OU DERROTA ========
 function verificarVitoria() {
     if (produtividade >= 100) {
         alert("🎉 Vocês venceram! A produtividade atingiu a meta!");
