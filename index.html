@@ -3,43 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Missão Produção em Equipe</title>
+    <title>Jogo do Tabuleiro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🎯 Missão Produção em Equipe</h1>
-        <p>Trabalhe em equipe para alcançar a meta antes que a rotatividade fique crítica!</p>
-    </header>
+    <h1>🎲 Jogo do Tabuleiro</h1>
+    <p>Clique no tabuleiro para rolar o dado e mover o peão.</p>
+    <canvas id="gameCanvas"></canvas>
 
-    <main>
-        <section id="board-section">
-            <img src="tabuleiro.png" id="board" alt="Tabuleiro">
-            <div id="player"></div>
-        </section>
-
-        <section id="controls">
-            <button id="rollDice">🎲 Rolar Dado</button>
-            <p id="diceResult">Resultado: -</p>
-
-            <div id="status">
-                <p>📈 Produtividade: <span id="produtividade">50</span></p>
-                <p>⚠️ Rotatividade: <span id="rotatividade">50</span></p>
-            </div>
-        </section>
-
-        <section id="card-section">
-            <h2>Carta</h2>
-            <div id="card"></div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Protótipo criado para treinamento de trabalho em equipe</p>
-    </footer>
-
-    <script src="java.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
 
 

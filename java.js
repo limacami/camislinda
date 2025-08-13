@@ -1,120 +1,97 @@
-// ======== VARIÁVEIS DO JOGO ========
-let posicao = 0;
-let produtividade = 50;
-let rotatividade = 50;
+// Seletores
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
 
-// Coordenadas reais de cada casa do tabuleiro
-const casas = [
-    { x: 55, y: 470 }, { x: 90, y: 430 }, { x: 125, y: 390 }, { x: 160, y: 350 },
-    { x: 200, y: 320 }, { x: 250, y: 300 }, { x: 300, y: 280 }, { x: 350, y: 270 },
-    { x: 400, y: 270 }, { x: 450, y: 280 }, { x: 480, y: 320 }, { x: 470, y: 370 },
-    { x: 440, y: 410 }, { x: 400, y: 440 }, { x: 350, y: 460 }, { x: 300, y: 470 },
-    { x: 250, y: 470 }, { x: 200, y: 460 }, { x: 150, y: 450 }, { x: 110, y: 440 },
-    { x: 80, y: 420 } // meta
+canvas.width = 1152;
+canvas.height = 768;
+
+// Carrega o tabuleiro
+const boardImg = new Image();
+boardImg.src = "assets/tabuleiro.png";
+
+// Peão
+let pawn = { x: 0, y: 0, size: 20, currentPos: 0 };
+
+// Coordenadas de cada casa no tabuleiro (extraídas da imagem)
+const positions = [
+    { x: 85, y: 600 },
+    { x: 155, y: 600 },
+    { x: 225, y: 580 },
+    { x: 295, y: 555 },
+    { x: 365, y: 530 },
+    { x: 435, y: 510 },
+    { x: 505, y: 500 },
+    { x: 575, y: 520 },
+    { x: 645, y: 540 },
+    { x: 715, y: 560 },
+    { x: 785, y: 580 },
+    { x: 855, y: 560 },
+    { x: 925, y: 540 },
+    { x: 990, y: 500 },
+    { x: 955, y: 440 },
+    { x: 885, y: 420 },
+    { x: 815, y: 400 },
+    { x: 745, y: 380 },
+    { x: 675, y: 360 },
+    { x: 605, y: 340 },
+    { x: 535, y: 320 },
+    { x: 465, y: 300 },
+    { x: 395, y: 280 },
+    { x: 325, y: 260 },
+    { x: 255, y: 240 },
+    { x: 185, y: 220 },
+    { x: 115, y: 200 },
+    { x: 85, y: 150 } // Meta
 ];
 
-// Lista de cartas
-const desafios = [
-    "Conflito entre colegas: +10 de Rotatividade",
-    "Falta de comunicação na equipe: -10 de Produtividade",
-    "Erro na produção por falta de cooperação: -5 Produtividade, +5 Rotatividade",
-    "Novo funcionário sem treinamento: +8 Rotatividade"
-];
-const solucoes = [
-    "Treinamento de trabalho em equipe: +10 Produtividade",
-    "Reunião de alinhamento: -8 Rotatividade",
-    "Reconhecimento de bom trabalho: +5 Produtividade, -5 Rotatividade",
-    "Liderança incentiva cooperação: +8 Produtividade"
-];
+// Inicia peão
+pawn.x = positions[0].x;
+pawn.y = positions[0].y;
 
-// Elementos do HTML
-const player = document.getElementById("player");
-const produtividadeSpan = document.getElementById("produtividade");
-const rotatividadeSpan = document.getElementById("rotatividade");
-const diceResult = document.getElementById("diceResult");
-const cardDiv = document.getElementById("card");
+// Desenha jogo
+function drawGame() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(boardImg, 0, 0, canvas.width, canvas.height);
 
-// Botão do dado
-document.getElementById("rollDice").addEventListener("click", () => {
-    let dado = Math.floor(Math.random() * 6) + 1;
-    diceResult.textContent = `Resultado: ${dado}`;
-    moverJogador(dado);
-});
+    // Peão
+    ctx.beginPath();
+    ctx.arc(pawn.x, pawn.y, pawn.size, 0, Math.PI * 2);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    ctx.stroke();
+}
 
-// ======== MOVIMENTO SUAVE ========
-function moverJogador(passos) {
-    let destino = posicao + passos;
-    if (destino >= casas.length) destino = casas.length - 1;
+// Movimento suave
+function movePawn(steps) {
+    let targetPos = pawn.currentPos + steps;
+    if (targetPos >= positions.length) targetPos = positions.length - 1;
 
-    let i = posicao;
-    function animar() {
-        if (i < destino) {
+    let i = pawn.currentPos;
+    function stepMove() {
+        if (i < targetPos) {
             i++;
-            player.style.left = casas[i].x + "px";
-            player.style.top = casas[i].y + "px";
-            setTimeout(animar, 300);
-        } else {
-            posicao = destino;
-            sortearCarta();
-            verificarVitoria();
+            pawn.x = positions[i].x;
+            pawn.y = positions[i].y;
+            pawn.currentPos = i;
+            drawGame();
+            setTimeout(stepMove, 300);
         }
     }
-    animar();
+    stepMove();
 }
 
-// ======== SORTEIO DE CARTAS ========
-function sortearCarta() {
-    const tipo = Math.random() < 0.5 ? "desafio" : "solucao";
-    const lista = tipo === "desafio" ? desafios : solucoes;
-    const carta = lista[Math.floor(Math.random() * lista.length)];
-    cardDiv.textContent = carta;
-    aplicarEfeito(carta);
+// Rola dado e move
+function rollDice() {
+    const result = Math.floor(Math.random() * 6) + 1;
+    console.log("Dado:", result);
+    movePawn(result);
 }
 
-// ======== APLICA EFEITO ========
-function aplicarEfeito(carta) {
-    const matches = carta.match(/([+-]?\d+)\s*(Produtividade|Rotatividade)/gi);
-    if (matches) {
-        matches.forEach(m => {
-            const valor = parseInt(m);
-            if (m.toLowerCase().includes("produtividade")) {
-                produtividade += valor;
-            }
-            if (m.toLowerCase().includes("rotatividade")) {
-                rotatividade += valor;
-            }
-        });
-    }
-    produtividade = Math.max(0, Math.min(produtividade, 100));
-    rotatividade = Math.max(0, Math.min(rotatividade, 100));
+// Evento clique para rolar dado
+canvas.addEventListener("click", rollDice);
 
-    produtividadeSpan.textContent = produtividade;
-    rotatividadeSpan.textContent = rotatividade;
-}
-
-// ======== VITÓRIA OU DERROTA ========
-function verificarVitoria() {
-    if (produtividade >= 100) {
-        alert("🎉 Vocês venceram! A produtividade atingiu a meta!");
-        resetarJogo();
-    }
-    if (rotatividade >= 100) {
-        alert("💀 Vocês perderam! A rotatividade ficou crítica!");
-        resetarJogo();
-    }
-}
-
-// ======== RESETAR JOGO ========
-function resetarJogo() {
-    posicao = 0;
-    produtividade = 50;
-    rotatividade = 50;
-    produtividadeSpan.textContent = produtividade;
-    rotatividadeSpan.textContent = rotatividade;
-    player.style.left = casas[0].x + "px";
-    player.style.top = casas[0].y + "px";
-    cardDiv.textContent = "";
-}
+// Loop inicial
+boardImg.onload = drawGame;
 
 
 
