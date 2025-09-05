@@ -1,6 +1,6 @@
 // Definindo usuário e senha
-const usuarioCorreto = "Jhennifer"; // <-- altere aqui seu nome
-const senhaCorreta = "25/08/2007";  // <-- altere para sua data de nascimento
+const usuarioCorreto = "Camila"; // <-- altere aqui seu nome
+const senhaCorreta = "26/11/2008";  // <-- altere para sua data de nascimento
 
 // Pegando elementos
 const form = document.getElementById("loginForm");
