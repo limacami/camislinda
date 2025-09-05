@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tela de Login</title>
+  <title>Tela de Login - CAMI</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="login-container">
-    <img src="oto.png" alt="Logo do App" class="logo">
-    <h2>Login</h2>
+    <img src="logo.png" alt="Logo do App" class="logo">
+    <h2>Bem-vinda, CAMI</h2>
     <form id="loginForm">
-      <label for="username">Usuário:</label>
-      <input type="text" id="username" placeholder="Digite seu nome" required>
-
-      <label for="password">Senha:</label>
-      <input type="password" id="password" placeholder="Digite sua senha" required>
+      <div class="input-group">
+        <label for="username">Usuário</label>
+        <input type="text" id="username" placeholder="Digite seu nome" required>
+      </div>
+      
+      <div class="input-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" placeholder="Digite sua senha" required>
+      </div>
 
       <button type="submit">Entrar</button>
     </form>
     <p id="mensagem"></p>
   </div>
-
   <script src="java.js"></script>
 </body>
 </html>
-
 
